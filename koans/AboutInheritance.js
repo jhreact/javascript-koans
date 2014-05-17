@@ -84,6 +84,6 @@ describe("About Crockford's inheritance improvement", function() {
   });
 
   it("should set constructor parameters on the derived object", function() {
-    expect(this.gonzo.trick).toEqual(FILL_ME_IN);
+    expect(this.gonzo.trick).toEqual("eat a tire");
   });
 });
