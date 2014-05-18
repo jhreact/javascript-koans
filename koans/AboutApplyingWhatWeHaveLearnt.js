@@ -101,10 +101,30 @@ describe("About Applying What We Have Learnt", function() {
   /*********************************************************************************/
   /* UNCOMMENT FOR EXTRA CREDIT */
   /*
+   */
   it("should find the largest prime factor of a composite number", function () {
+    // For this,
+    // * find all the primes less than composite number
+    // * Then, iterate through primes, highest to lowest
+    //   * if composite % prime === 0, and composite / prime = prime
+    var primes = [];
+    var isPrime = function(possiblePrime) {
+      for (var i=2; i < possiblePrime; i++) {
+        if (possiblePrime % i === 0) {
+          return false;
+        }
+      }
+      return true;
+    };
 
+    // durrr...use range
+    var getPrimes = function(composite) {
+      return _.range(composite).filter(function(x) { return isPrime(x); });
+    };
   });
 
+
+  /*
   it("should find the largest palindrome made from the product of two 3 digit numbers", function () {
 
   });
