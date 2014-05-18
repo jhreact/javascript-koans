@@ -107,7 +107,6 @@ describe("About Applying What We Have Learnt", function() {
     // * find all the primes less than composite number
     // * Then, iterate through primes, highest to lowest
     //   * if composite % prime === 0, and composite / prime = prime
-    var primes = [];
     var isPrime = function(possiblePrime) {
       for (var i=2; i < possiblePrime; i++) {
         if (possiblePrime % i === 0) {
@@ -116,11 +115,26 @@ describe("About Applying What We Have Learnt", function() {
       }
       return true;
     };
+    expect(isPrime(1)).toBe(true);
+    expect(isPrime(4)).toBe(false);
+    expect(isPrime(5)).toBe(true);
 
     // durrr...use range
-    var getPrimes = function(composite) {
-      return _.range(composite).filter(function(x) { return isPrime(x); });
+    var primesLessThanNum = function(composite) {
+      return _.range(2,composite).filter(function(x) { return isPrime(x); });
     };
+    expect(primesLessThanNum(6)).toEqual([2, 3, 5]);
+    expect(primesLessThanNum(9)).toEqual([2, 3, 5, 7]);
+
+    var largestPrimeFactor = function(composite) {
+      return _(primesLessThanNum(composite)).chain()
+        .filter(function(x) { return composite % x === 0})
+        .max()
+        .value();
+    }
+    expect(largestPrimeFactor(9)).toBe(3);
+    expect(largestPrimeFactor(25)).toBe(5);
+    expect(largestPrimeFactor(247)).toBe(19);
   });
 
 
