@@ -132,6 +132,7 @@ describe("About Applying What We Have Learnt", function() {
         .max()
         .value();
     }
+    console.log(primesLessThanNum(20));
     expect(largestPrimeFactor(9)).toBe(3);
     expect(largestPrimeFactor(25)).toBe(5);
     expect(largestPrimeFactor(247)).toBe(19);
@@ -141,13 +142,23 @@ describe("About Applying What We Have Learnt", function() {
   /*
   it("should find the largest palindrome made from the product of two 3 digit numbers", function () {
 
-  });
+  });*/
 
   it("should find the smallest number divisible by each of the numbers 1 to 20", function () {
-
-
+    var isDivisibleByOneThroughTwenty = function(num) {
+      for (var i=1; i <=20; i++) {
+        if (num % i !== 0) {
+          return false;
+        }
+      }
+      return true;
+    };
+    var twentyFactorial = 1*2*3*4*5*6*7*8*9*10*11*12*12*13*14*15*16*17*18*19*20;
+    expect(isDivisibleByOneThroughTwenty(10)).toBe(false);
+    expect(isDivisibleByOneThroughTwenty(twentyFactorial)).toBe(true);
   });
 
+  /*
   it("should find the difference between the sum of the squares and the square of the sums", function () {
 
   });
