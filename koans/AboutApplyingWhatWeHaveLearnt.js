@@ -132,7 +132,6 @@ describe("About Applying What We Have Learnt", function() {
         .max()
         .value();
     }
-    console.log(primesLessThanNum(20));
     expect(largestPrimeFactor(9)).toBe(3);
     expect(largestPrimeFactor(25)).toBe(5);
     expect(largestPrimeFactor(247)).toBe(19);
@@ -156,6 +155,16 @@ describe("About Applying What We Have Learnt", function() {
     var twentyFactorial = 1*2*3*4*5*6*7*8*9*10*11*12*12*13*14*15*16*17*18*19*20;
     expect(isDivisibleByOneThroughTwenty(10)).toBe(false);
     expect(isDivisibleByOneThroughTwenty(twentyFactorial)).toBe(true);
+
+    var divRange20 = function () {
+      var testNum = 1;
+      while (! isDivisibleByOneThroughTwenty(testNum)) {
+        //console.log(testNum);
+        testNum++;
+      }
+      return testNum;
+    };
+    expect(divRange20()).toBe(232792560);
   });
 
   /*
