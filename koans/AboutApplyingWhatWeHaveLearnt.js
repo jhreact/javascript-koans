@@ -107,9 +107,8 @@ describe("About Applying What We Have Learnt", function() {
     // * find all the primes less than composite number
     // * Then, iterate through primes, highest to lowest
     //   * if composite % prime === 0, and composite / prime = prime
-    var isPrime = function(possiblePrime) {
+    isPrime = function(possiblePrime) {
       if (possiblePrime === 1 || possiblePrime === 2) {
-        console.log("PossiblePrime is one or two");
         return true;
       } else if (possiblePrime % 2 === 0) {
         return false;
@@ -207,6 +206,7 @@ describe("About Applying What We Have Learnt", function() {
   it("should find the 10001st prime", function () {
     var tenThousandAndOnethPrime = function() {
       var primes = [2];
+      console.log(isPrime(6));
 
     }
     expect(tenThousandAndOnethPrime()).toBe(104743);
