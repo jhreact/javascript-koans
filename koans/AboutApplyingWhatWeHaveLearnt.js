@@ -206,8 +206,15 @@ describe("About Applying What We Have Learnt", function() {
   it("should find the 10001st prime", function () {
     var tenThousandAndOnethPrime = function() {
       var primes = [2];
-      console.log(isPrime(6));
-
+      var potentialPrime = 3;
+      while (primes.length < 10001) {
+        if (isPrime(potentialPrime) ) {
+          primes.push(potentialPrime);
+        }
+        potentialPrime += 2;
+      }
+      // console.log(primes[10000]);
+      return primes[10000];
     }
     expect(tenThousandAndOnethPrime()).toBe(104743);
   });
