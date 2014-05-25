@@ -108,7 +108,13 @@ describe("About Applying What We Have Learnt", function() {
     // * Then, iterate through primes, highest to lowest
     //   * if composite % prime === 0, and composite / prime = prime
     var isPrime = function(possiblePrime) {
-      for (var i=2; i < possiblePrime; i++) {
+      if (possiblePrime === 1 || possiblePrime === 2) {
+        console.log("PossiblePrime is one or two");
+        return true;
+      } else if (possiblePrime % 2 === 0) {
+        return false;
+      }
+      for (var i=3; i < possiblePrime; i+= 2) {
         if (possiblePrime % i === 0) {
           return false;
         }
@@ -198,9 +204,11 @@ describe("About Applying What We Have Learnt", function() {
     expect(squareDiffs([3,4])).toBe(24);
   });
 
-  /*
   it("should find the 10001st prime", function () {
+    var tenThousandAndOnethPrime = function() {
+      var primes = [2];
 
+    }
+    expect(tenThousandAndOnethPrime()).toBe(104743);
   });
-  */
 });
