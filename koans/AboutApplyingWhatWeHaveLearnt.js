@@ -167,11 +167,38 @@ describe("About Applying What We Have Learnt", function() {
     expect(divRange20()).toBe(232792560);
   });
 
-  /*
   it("should find the difference between the sum of the squares and the square of the sums", function () {
+    var squareDiffs = function(nums) {
+      var sumOfSquares = function(nums) {
+        var total = 0;
+        for (var i=0; i < nums.length; i++) {
+          total += nums[i] * nums[i];
+          // console.log("Sum of squares total: " + total);
+        };
+        return total;
+      }
+      expect(sumOfSquares([3,4])).toBe(25);
+      expect(sumOfSquares([3,4,5])).toBe(50);
 
+      var squareOfSums = function(nums) {
+        var total = 0;
+        for (var i=0; i < nums.length; i++) {
+          total += nums[i];
+          // console.log("Square of sums total: " + total);
+        };
+        return total * total;
+      }
+      expect(squareOfSums([3,4])).toBe(49);
+      expect(squareOfSums([3,4,5])).toBe(144);
+
+      return squareOfSums(nums) - sumOfSquares(nums);
+    };
+
+
+    expect(squareDiffs([3,4])).toBe(24);
   });
 
+  /*
   it("should find the 10001st prime", function () {
 
   });
